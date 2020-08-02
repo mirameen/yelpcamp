@@ -22,11 +22,8 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb+srv://mirameen84:GzEESinRgtozcLOB@mongouploads-ppu8t.mongodb.net/yelp_camp?retryWrites=true&w=majority"
-	).catch(err => {
-		console.log("Error: ", err.message);
-	 });
-
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect("mongodb+srv://mirameen84:GzEESinRgtozcLOB@mongouploads-ppu8t.mongodb.net/yelp_camp?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 app.set("view engine","ejs");

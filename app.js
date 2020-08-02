@@ -54,6 +54,6 @@ app.use(campgroundRoutes);
 app.use(commentRoutes);
 
 
-app.listen(port,function(){
+app.listen(process.env.PORT,process.env.IP,function(){
 	console.log("YelpCamp server has started");
 });

@@ -12,9 +12,15 @@ var seedDB			=require("./seeds");
 var flash			=require("connect-flash");
 var port			=3000;
 
+<<<<<<< HEAD
 var indexRoutes=require("./routes/index");
 var campgroundRoutes=require("./routes/campgrounds");
 var commentRoutes=require("./routes/comments");
+=======
+var indexRoutes		=require("./routes/index");
+var campgroundRoutes=require("./routes/campgrounds");
+var commentRoutes	=require("./routes/comments");
+>>>>>>> 1a17f0bee32f7606aa948f366bd023feecc0856f
 
 //seedDB();
 mongoose.set('useNewUrlParser',true);
@@ -22,7 +28,11 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
+<<<<<<< HEAD
 mongoose.connect(process.env.DATABASEURL);
+=======
+mongoose.connect("mongodb://localhost/yelp_camp");
+>>>>>>> 1a17f0bee32f7606aa948f366bd023feecc0856f
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
@@ -54,6 +64,10 @@ app.use(campgroundRoutes);
 app.use(commentRoutes);
 
 
+<<<<<<< HEAD
 app.listen(process.env.PORT,process.env.IP,function(){
+=======
+app.listen(port,function(){
+>>>>>>> 1a17f0bee32f7606aa948f366bd023feecc0856f
 	console.log("YelpCamp server has started");
 });
